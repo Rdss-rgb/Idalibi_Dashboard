@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/js/checkcookie.js"></script>
+    <script src="/assets/js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <!--spinner -->
+    <!-- <div id='spinner'class=" hidden ease-in-out duration-1000 fixed w-full min-h-screen bg-white flex justify-center items-center dark:bg-slate-700" style=" z-index: 999999 !important; ">
+        <div class="spinner"></div>
+    </div> -->
+<button class="fixed bottom-6 right-6 rounded-full w-auto p-4 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-center items-center z-10 ">
+    <svg fill="#ffffff" height="48px" width="48px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 368.373 368.373" xml:space="preserve" stroke="#c4c4c4"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_91_"> <path id="XMLID_92_" d="M293.373,226.936h-15v-15c0-8.284-6.716-15-15-15c-8.284,0-15,6.716-15,15v15h-15c-8.284,0-15,6.716-15,15 c0,8.284,6.716,15,15,15h15v15c0,8.284,6.716,15,15,15c8.284,0,15-6.716,15-15v-15h15c8.284,0,15-6.716,15-15 C308.373,233.652,301.657,226.936,293.373,226.936z"></path> <path id="XMLID_93_" d="M263.373,136.936c-34.485,0-65.14,16.713-84.293,42.463c-7.653-1.61-15.582-2.463-23.707-2.463 c-8.643,0-17.064,0.965-25.165,2.781c-38.121,8.543-69.149,36.066-82.606,72.092c-4.669,12.5-7.229,26.02-7.229,40.127 c0,8.284,6.716,15,15,15h125.596c19.246,24.348,49.03,40,82.404,40c57.898,0,105-47.102,105-105S321.271,136.936,263.373,136.936z M263.373,316.936c-13.592,0-26.339-3.652-37.344-10c-22.48-12.967-37.656-37.236-37.656-65c0-20.01,7.892-38.199,20.708-51.662 c13.67-14.359,32.946-23.338,54.292-23.338c41.355,0,75,33.645,75,75S304.728,316.936,263.373,316.936z"></path> <path id="XMLID_104_" d="M32.622,84.187c0,23.666,18.367,43.109,41.594,44.857c-7.382-13.302-11.594-28.596-11.594-44.857 s4.212-31.556,11.594-44.857C50.989,41.077,32.622,60.521,32.622,84.187z"></path> <path id="XMLID_105_" d="M93.489,160.825c-5.17-1.077-10.482-1.639-15.867-1.639C34.821,159.186,0,194.008,0,236.809 c0,8.284,6.716,15,15,15h1.025C27.627,211.581,56.218,178.487,93.489,160.825z"></path> <path id="XMLID_106_" d="M104.216,47.915c-7.289,10.25-11.594,22.764-11.594,36.271s4.305,26.021,11.594,36.271 c11.383,16.006,30.065,26.478,51.157,26.478c34.601,0,62.75-28.149,62.75-62.75s-28.149-62.75-62.75-62.75 C134.28,21.437,115.599,31.909,104.216,47.915z"></path> </g> </g></svg>
+    <p class="text-white font-bold text-xl pl-2">Add User</p></button>
+    <nav
+        class="bg-gradient-to-r from-cyan-500 to-blue-500 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+            <div class="relative w-full sm:w-64">
+                <form class="max-w-md mx-auto">
+                    <label for="default-search"
+                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative ">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none ">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search"
+                            class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="" required />
+                        <button type="submit"
+                            class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                    </div>
+                </form>
+            </div>
+
+
+
+            <div class="relative w-full sm:w-44">
+                <select id="countries"
+                    class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Filter</option>
+                    <option value="Department">Department</option>
+                    <option value="Roles">Roles</option>
+                    <option value="JobTitle">JobTitle</option>
+                </select>
+            </div>
+
+
+        </div>
+
+    </nav>
+
+<div class="w-full min-h-screen flex justify-center bg-slate-100  dark:bg-slate-700">
+    <div id="card-container" class="w-11/12 h-full pt-32 flex flex-wrap justify-center xl:justify-start  md:px-10 ">
+
+
+        <div id="user-card-tmpl"
+            class="hidden w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-4 my-4 relative ease-in-out duration-300 hover:scale-1.1">
+            <div class="flex justify-end px-4 pt-4">
+                <button id="dropdownButton"  onclick="toggleNavbar('dropdown')"
+                    class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+                    type="button">
+                    <span class="sr-only">Open dropdown</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        viewBox="0 0 16 3">
+                        <path
+                            d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
+                    </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdown"
+                    class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2" aria-labelledby="dropdownButton">
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Export
+                                Data</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="card-main-content" class="flex flex-col items-center pb-10">
+                <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="/assets/img/avatar.svg" alt="Bonnie image" />
+                <div class=" flex justify-center  ">
+                    <h3 data-role="full-name" class="mb-2 text-4xl font-medium text-gray-900 dark:text-white"></h3>
+                </div>
+                <span data-role="active" class="absolute w-4 h-4 top-0 left-2 text-yellow-800 font-semibold rounded-full dark:bg-green-600 dark:text-lime-900 my-2 cursor-pointer dark:animate-pulse"></span>
+                
+                <div class=" flex justify-center mb-8">
+                    <span data-role="department" class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3 cursor-pointer">Software Development</span>
+                    <span data-role="job-title" class="text-sm text-gray-500 dark:text-gray-400 ps-2">Department Manager</span>
+                </div>
+                <div data-role="roles" class="flex gap-2 w-full justify-center flex-wrap">
+                    <span data-role="role" class="hidden bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5 rounded-full dark:bg-transparent dark:border dark:border-blue-400 dark:text-blue-400 cursor-pointer"></span>
+                </div>
+               
+                <span data-role="last-login" class=" absolute bottom-2 right-2 mt-4 text-yellow-800 text-xs font-semibold rounded-full dark:text-green-500 cursor-pointer flex justify-end opacity-40">
+                    <svg class="w-2.5 h-2.5 mx-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z"/>
+                    </svg>
+                    <span data-role="last-login-time" class="me-1">2 minutes ago</span> |
+                    <span data-role="last-login-location" class="ms-1 w-52 text-center ">United States, Massachusetts, Lake Chaubunagungamaug</span>
+                </span>
+            </div>
+        </div>
+        
+        
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="/assets/js/base.js"></script>
+<script src="/assets/js/user.js"></script>
+<script src="/assets/js/moment.js"></script>
+</html>

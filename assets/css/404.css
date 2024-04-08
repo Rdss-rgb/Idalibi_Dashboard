@@ -1,0 +1,12 @@
+@import url("https://fonts.cdnfonts.com/css/conthrax");
+body {
+    background-image: url('../img/waves.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow: hidden;
+    height: 100%;
+}
+p{
+    font-family: "Conthrax";
+}

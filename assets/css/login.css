@@ -1,0 +1,54 @@
+#sq1{
+transition: cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
+
+}
+#sq2{
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.8s;
+
+}
+#sq3{
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s;
+
+}
+#sq4{
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+
+}
+#loginbody{
+    background-image: url('../img/waves2.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size:auto;
+    overflow: hidden;
+    height: 100%;
+}
+
+#globe{
+    background-image: url('../img/globe.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size:auto;
+    overflow: hidden;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    opacity: 0.7;
+
+}
+
+#main-page:hover #sq1 {
+    background-color: #3497e2 !important;
+   transform: skewY(20deg);
+}
+#main-page:hover #sq2 {
+    background-color: #5e9efe !important;
+    transform: skewY(15deg);
+}
+#main-page:hover #sq3 {
+    background-color: #31bbfbb4 !important;
+    transform: skewY(10deg);
+}
+#main-page:hover #sq4 {
+    background-color:#24d3f2ae !important;
+    transform: skewY(5deg);
+}
