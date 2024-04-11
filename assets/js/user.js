@@ -1,8 +1,11 @@
+    var clientID = JSON.parse(localStorage.getItem("client")).ID;
     let cardTemplate = document.getElementById("user-card-tmpl");
     let cardContainer = document.getElementById("card-container");
-
-    const apiUrl = `${baseurl}clientuser/?client_id=${clientID}`;
-    fetch(apiUrl, {
+    var apiUrl = `${baseurl}clientuser/?client_id=${clientID}`;
+    var tempCard;
+function api(url){
+   
+    fetch(url, {
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("access-jwt")
         }
@@ -46,31 +49,31 @@
                 }
 
                 cardContainer.appendChild(tempCard);
-       
+     
 
-                var searchUser = document.getElementById('default-search');
+            }
+        });
+}
+api(apiUrl)
+
+
+
+
+
         
-            searchUser .addEventListener('input', ()=> {
-            var  b = document.querySelectorAll("[data-role='full-name']");
-            var searchValue = searchUser .value.toLowerCase();
 
+          
+            var search_data =  document.getElementById("default-search"); 
+
+            search_data.addEventListener('change', ()=> {
+                cardContainer.innerHTML="";
+            var searchValue = search_data.value.toLowerCase();
+            console.log(searchValue)
     
             if (searchValue !== "") {
-                for (let j = 0; j <  b.length; j++) {
-                    var elementId =  b[j].textContent.toLowerCase();
-                    console.log(b[j].textContent, b[1].parentElement.parentElement.parentElement)
-                    if (elementId.indexOf(searchValue) !== -1) {
-                        b[j].parentElement.parentElement.parentElement.style.display = "block";
-                    } else {
-                        b[j].parentElement.parentElement.parentElement.style.display = "none";
-                    }
-                }
-            } else {
-                for (let ji = 1; ji < b.length; ji++) {
-                    b[ji].parentElement.parentElement.parentElement.style.display = "block";
-                }
+                api(`${baseurl}clientuser/?client_id=${clientID}&$q=${searchValue}`)
+              
+              
             }
         });
-
-            }
-        });
+        console.log(apiUrl)

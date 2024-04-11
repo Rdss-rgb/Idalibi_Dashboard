@@ -1,7 +1,6 @@
 
 //CONSTANT
 const baseurl = 'http://192.168.148.247:8080/admin-portal/api/d/';
-const clientID = JSON.parse(localStorage.getItem("client")).ID;
 const jwt = localStorage.getItem("access-jwt");
 
 //Checks the theme mode

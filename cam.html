@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video id="cam"></video>
+    <script>
+        let video = document.getElementById("cam");
+        var track;
+        var focusDistance = 0.10000000149011612
+        async function test() {
+
+            let stream = await navigator.mediaDevices.getUserMedia({
+                video: {
+                    focusDistance: {ideal: 0.04},
+                    facingMode: {exact: "environment"}
+                    // deviceId: {
+                    // exact: device.deviceId,
+                    // },
+                },
+            });
+            track = stream.getVideoTracks()[0];
+            console.log(stream.getVideoTracks())
+            track.applyConstraints({focusMode: "continuous", exposureMode: "continuous", whiteBalanceMode:"continuous"});
+            video.srcObject = stream;
+            video.onloadedmetadata = () => {
+                video.play();
+            };
+
+            // navigator.mediaDevices.enumerateDevices()
+            // .then((devices) => {
+            //     devices.forEach(async (device) => {
+            //         if (device.kind != "videoinput") {
+            //             return;
+            //         }
+            //         console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+            //         console.log(device);
+
+            //         console.log("SAAAA")
+
+            //         // if (device.deviceId != "34cc85713fbbc140c34b7e08ff2d4b0f276f38fe7f89b4435935507c0ddcc46a") {
+            //         //     return;
+            //         // }
+
+                    
+            //     });
+            // })
+            // .catch((err) => {
+            //     console.error(`${err.name}: ${err.message}`);
+            // });
+        }
+        test();
+
+        video.addEventListener("click", function(e){
+            console.log(e);
+            track.applyConstraints({focusMode: "continuous", pointsOfInterest: [{x:e.x, y:e.y}]} );
+        })
+    </script>
+</body>
+</html>

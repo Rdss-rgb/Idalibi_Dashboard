@@ -1,3 +1,6 @@
+var clientID = JSON.parse(localStorage.getItem("client")).ID;
+
+
 // Liscense usage 
 (async ()=>{    
     const apiUrl = `${baseurl}clientuser/?$f=id__count&client_id=${clientID}`;
