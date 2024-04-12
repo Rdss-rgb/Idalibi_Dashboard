@@ -15,18 +15,18 @@ else {
 }
 
 //For page Spinner
-if(document.querySelector('#spinner')!=undefined){
-    document.querySelector('#spinner').classList.remove('hidden')
-    document.body.style.overflow="hidden"
-    setTimeout(() => {
-    document.querySelector('#spinner').classList.add('opacity-0')
+// if(document.querySelector('#spinner')!=undefined){
+//     document.querySelector('#spinner').classList.remove('hidden')
+//     document.body.style.overflow="hidden"
+//     setTimeout(() => {
+//     document.querySelector('#spinner').classList.add('opacity-0')
     
-    document.body.style.overflow="auto"
-    setTimeout(() => {
-        document.querySelector('#spinner').classList.add('hidden')
+//     document.body.style.overflow="auto"
+//     setTimeout(() => {
+//         document.querySelector('#spinner').classList.add('hidden')
     
-    }, 1000);
-    }, 2000);
-}
+//     }, 500);
+//     }, 1000);
+// }
 
 

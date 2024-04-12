@@ -65,15 +65,32 @@ api(apiUrl)
           
             var search_data =  document.getElementById("default-search"); 
 
-            search_data.addEventListener('change', ()=> {
+            search_data.addEventListener('input', ()=> {
+       
+            
+                
+                
                 cardContainer.innerHTML="";
-            var searchValue = search_data.value.toLowerCase();
+            var searchValue = search_data.value;
             console.log(searchValue)
     
             if (searchValue !== "") {
+                document.querySelector('#spinner').classList.remove('hidden')
+                document.querySelector('#spinner').classList.remove('opacity-0')
+                document.body.style.overflow="hidden"
+                setTimeout(() => {
+                    document.querySelector('#spinner').classList.add('opacity-0')
+                
+                document.body.style.overflow="auto"
+                setTimeout(() => {
+
+                    document.querySelector('#spinner').classList.add('hidden')                
+                }, 200);
+                }, 500);
                 api(`${baseurl}clientuser/?client_id=${clientID}&$q=${searchValue}`)
-              
-              
+            }
+            else{
+                api(apiUrl)
             }
         });
         console.log(apiUrl)

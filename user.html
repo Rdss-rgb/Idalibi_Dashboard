@@ -16,15 +16,18 @@
 
 <body>
     <!--spinner -->
-    <!-- <div id='spinner'class=" hidden ease-in-out duration-1000 fixed w-full min-h-screen bg-white flex justify-center items-center dark:bg-slate-700" style=" z-index: 999999 !important; ">
+    <div id='spinner'class=" hidden ease-in-out duration-1000 fixed w-full min-h-screen bg-white flex justify-center items-center dark:bg-slate-700" style=" z-index: 999999 !important; ">
         <div class="spinner"></div>
-    </div> -->
+    </div> 
 <button class="fixed bottom-6 right-6 rounded-full w-auto p-4 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-center items-center z-10 ">
     <svg fill="#ffffff" height="48px" width="48px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 368.373 368.373" xml:space="preserve" stroke="#c4c4c4"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_91_"> <path id="XMLID_92_" d="M293.373,226.936h-15v-15c0-8.284-6.716-15-15-15c-8.284,0-15,6.716-15,15v15h-15c-8.284,0-15,6.716-15,15 c0,8.284,6.716,15,15,15h15v15c0,8.284,6.716,15,15,15c8.284,0,15-6.716,15-15v-15h15c8.284,0,15-6.716,15-15 C308.373,233.652,301.657,226.936,293.373,226.936z"></path> <path id="XMLID_93_" d="M263.373,136.936c-34.485,0-65.14,16.713-84.293,42.463c-7.653-1.61-15.582-2.463-23.707-2.463 c-8.643,0-17.064,0.965-25.165,2.781c-38.121,8.543-69.149,36.066-82.606,72.092c-4.669,12.5-7.229,26.02-7.229,40.127 c0,8.284,6.716,15,15,15h125.596c19.246,24.348,49.03,40,82.404,40c57.898,0,105-47.102,105-105S321.271,136.936,263.373,136.936z M263.373,316.936c-13.592,0-26.339-3.652-37.344-10c-22.48-12.967-37.656-37.236-37.656-65c0-20.01,7.892-38.199,20.708-51.662 c13.67-14.359,32.946-23.338,54.292-23.338c41.355,0,75,33.645,75,75S304.728,316.936,263.373,316.936z"></path> <path id="XMLID_104_" d="M32.622,84.187c0,23.666,18.367,43.109,41.594,44.857c-7.382-13.302-11.594-28.596-11.594-44.857 s4.212-31.556,11.594-44.857C50.989,41.077,32.622,60.521,32.622,84.187z"></path> <path id="XMLID_105_" d="M93.489,160.825c-5.17-1.077-10.482-1.639-15.867-1.639C34.821,159.186,0,194.008,0,236.809 c0,8.284,6.716,15,15,15h1.025C27.627,211.581,56.218,178.487,93.489,160.825z"></path> <path id="XMLID_106_" d="M104.216,47.915c-7.289,10.25-11.594,22.764-11.594,36.271s4.305,26.021,11.594,36.271 c11.383,16.006,30.065,26.478,51.157,26.478c34.601,0,62.75-28.149,62.75-62.75s-28.149-62.75-62.75-62.75 C134.28,21.437,115.599,31.909,104.216,47.915z"></path> </g> </g></svg>
     <p class="text-white font-bold text-xl pl-2">Add User</p></button>
     <nav
         class="bg-gradient-to-r from-cyan-500 to-blue-500 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
         <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+            <div class="flex justify-center text-blueGray-600 mr-0 whitespace-nowrap text-sm uppercase font-bold  px-0 cursor-pointer" onclick="history.back()">
+                <img src="/assets/img/loader-logo.svg" alt="" height="60" width="60">
+            </div>
             <div class="relative w-full sm:w-64">
                 <form class="max-w-md mx-auto">
                     <label for="default-search"
@@ -40,15 +43,15 @@
                         <input type="search" id="default-search"
                             class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="" required />
-                        <button type="submit"
-                            class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                        <button type="submit" disabled
+                            class="text-white absolute end-2.5 bottom-2.5 bg-blue-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600  dark:focus:ring-blue-800">Search</button>
                     </div>
                 </form>
             </div>
 
 
 
-            <div class="relative w-full sm:w-44">
+            <!-- <div class="relative w-full sm:w-44">
                 <select id="countries"
                     class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option selected>Filter</option>
@@ -56,7 +59,7 @@
                     <option value="Roles">Roles</option>
                     <option value="JobTitle">JobTitle</option>
                 </select>
-            </div>
+            </div> -->
 
 
         </div>

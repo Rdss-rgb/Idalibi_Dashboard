@@ -80,7 +80,7 @@ function gotStream(stream) {
   window.stream = stream; // make stream available to console
   videoElement.srcObject = stream;
 
-  document.getElementById("track-count").innerText = stream.getVideoTracks().length;
+  document.getElementById("track-count").innerText = stream.getVideoTracks()[0].getCapabilities().torch;
 
   // Refresh button list in case labels have become available
   return navigator.mediaDevices.enumerateDevices();
