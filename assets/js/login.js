@@ -45,7 +45,7 @@ async function submit(e){
   var password=document.getElementById('password').value;
 
   // API endpoint for creating a new user
-  const apiUrl = `${baseurl}auth/login/`;
+  const apiUrl = `${API_BASE_URL}auth/login/`;
   let formData = new FormData();
   formData.append('username',email)
   formData.append('password',password);
@@ -111,7 +111,7 @@ function  submitpage(e) {
   var pass=document.getElementById('password').value;
 
   // API endpoint for creating a new user
-const apiUrl = `${baseurl}auth/signup/`;
+const apiUrl = `${API_BASE_URL}auth/signup/`;
 
 
   let formData = new FormData();
@@ -167,6 +167,7 @@ const apiUrl = `${baseurl}auth/signup/`;
 
       // Login was ok
       setLoginUser(response);
+      window.location = "onboarding/index.html";
     })
     .catch(error => {
       console.error('Error for signup:', error);
@@ -201,5 +202,5 @@ function eraseCookie(name){
 
 
 function idalibi(){
-  window.location = "https://delicate-raindrop-e37c7c.netlify.app/";
+  window.location = "https://idalibi-scanner.netlify.app";
 }

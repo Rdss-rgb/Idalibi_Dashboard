@@ -1,7 +1,7 @@
     var clientID = JSON.parse(localStorage.getItem("client")).ID;
     let cardTemplate = document.getElementById("user-card-tmpl");
     let cardContainer = document.getElementById("card-container");
-    var apiUrl = `${baseurl}clientuser/?client_id=${clientID}`;
+    var apiUrl = `${API_BASE_URL}clientuser/?client_id=${clientID}`;
     var tempCard;
 function api(url){
    
@@ -87,7 +87,7 @@ api(apiUrl)
                     document.querySelector('#spinner').classList.add('hidden')                
                 }, 200);
                 }, 500);
-                api(`${baseurl}clientuser/?client_id=${clientID}&$q=${searchValue}`)
+                api(`${API_BASE_URL}clientuser/?client_id=${clientID}&$q=${searchValue}`)
             }
             else{
                 api(apiUrl)

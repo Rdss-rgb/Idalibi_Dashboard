@@ -3,7 +3,7 @@ var clientID = JSON.parse(localStorage.getItem("client")).ID;
 
 // Liscense usage 
 (async ()=>{    
-    const apiUrl = `${baseurl}clientuser/?$f=id__count&client_id=${clientID}`;
+    const apiUrl = `${API_BASE_URL}clientuser/?$f=id__count&client_id=${clientID}`;
     fetch(apiUrl, {
         headers: {
             Authorization: `Bearer ${jwt}`
@@ -20,7 +20,7 @@ var clientID = JSON.parse(localStorage.getItem("client")).ID;
 
 // Apps 
 (async ()=>{
-    const apiUrl = `${baseurl}app/?$f=id__count&client_id=${clientID}`;
+    const apiUrl = `${API_BASE_URL}app/?$f=id__count&client_id=${clientID}`;
     fetch(apiUrl, {
         headers: {
             Authorization: `Bearer ${jwt}`
@@ -37,7 +37,7 @@ var clientID = JSON.parse(localStorage.getItem("client")).ID;
 
 // Successful & Failed login
 (async ()=>{
-    const apiUrl = `${baseurl}userlogin/?$f=id__count,valid&$groupby=valid&client_id=${clientID}`;
+    const apiUrl = `${API_BASE_URL}userlogin/?$f=id__count,valid&$groupby=valid&client_id=${clientID}`;
     fetch(apiUrl, {
         headers: {
             Authorization: `Bearer ${jwt}`
@@ -72,7 +72,7 @@ var clientID = JSON.parse(localStorage.getItem("client")).ID;
 
 // Geo chart
 (async ()=>{
-    const apiUrl = `${baseurl}userlogin/?$f=id__count,country,valid&$groupby=country,valid&client_id=${clientID}`;
+    const apiUrl = `${API_BASE_URL}userlogin/?$f=id__count,country,valid&$groupby=country,valid&client_id=${clientID}`;
     fetch(apiUrl, {
         headers: {
             Authorization: `Bearer ${jwt}`
@@ -102,7 +102,7 @@ var clientID = JSON.parse(localStorage.getItem("client")).ID;
 
 // Login stacked chart
 (async ()=>{
-    const apiUrl = `${baseurl}userlogin/?$f=id__count,valid,created_at__date&$groupby=created_at__date,valid&client_id=${clientID}&$order=created_at`;
+    const apiUrl = `${API_BASE_URL}userlogin/?$f=id__count,valid,created_at__date&$groupby=created_at__date,valid&client_id=${clientID}&$order=created_at`;
     fetch(apiUrl, {
         headers: {
             Authorization: `Bearer ${jwt}`

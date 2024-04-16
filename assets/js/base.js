@@ -1,6 +1,6 @@
 
 //CONSTANT
-const baseurl = 'http://192.168.148.247:8080/admin-portal/api/d/';
+const API_BASE_URL = 'http://192.168.148.247:8080/admin-portal/api/d/';
 const jwt = localStorage.getItem("access-jwt");
 
 //Checks the theme mode
